@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | My Personal Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html"><span class="logo"></span><b>MySite</b></a>
+    <nav>
+      <button class="menu-btn" id="menuBtn">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <section class="card">
+    <h1>Contact me</h1>
+    <p class="muted">Have feedback or ideas? Send a quick note below.</p>
+
+    <form id="contactForm" class="contact-form">
+      <label>Name
+        <input name="name" required placeholder="Your name">
+      </label>
+      <label>Email (optional)
+        <input name="email" type="email" placeholder="you@example.com">
+      </label>
+      <label>Message
+        <textarea name="message" rows="6" required placeholder="Type your message..."></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="preview" class="preview" hidden></div>
+    <p class="muted">🔒 Demo only: this form shows a preview and doesn’t store anything. We can wire it up later.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container wrap">
+    <small>© 2025 — Reza’s Personal Site</small>
+    <small>Built with ♥ HTML & CSS</small>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  btn?.addEventListener('click', ()=> links.classList.toggle('show'));
+
+  const form = document.getElementById('contactForm');
+  const preview = document.getElementById('preview');
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    const name = (fd.get('name')||'').toString().trim() || 'Anonymous';
+    const email = (fd.get('email')||'').toString().trim() || '—';
+    const message = (fd.get('message')||'').toString().trim();
+    preview.innerHTML = `
+      <h2>Preview</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <blockquote>${message.replace(/\n/g,'<br>')}</blockquote>
+    `;
+    preview.hidden = false;
+    form.reset();
+  });
+</script>
+</body>
+</html>

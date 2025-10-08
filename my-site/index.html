@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | My Personal Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="logo"></span><b>MySite</b>
+    </a>
+    <nav>
+      <button class="menu-btn" id="menuBtn">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <h1>Hi, I’m Reza — welcome to my site</h1>
+        <p class="muted">Browse a quick intro, a few highlights, and ways to get in touch. This site is static, fast, and easy to maintain.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="about.html">Learn more</a>
+          <a class="btn btn-outline" href="#features">See features</a>
+        </div>
+      </div>
+      <div class="preview card">Clean • Fast • Responsive</div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2>Why this site works</h2>
+      <p class="muted">Three simple reasons:</p>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Lightweight</h3>
+          <p class="muted">Just HTML/CSS/JS — no heavy frameworks.</p>
+        </article>
+        <article class="card">
+          <h3>Responsive</h3>
+          <p class="muted">Looks good on phones and desktops.</p>
+        </article>
+        <article class="card">
+          <h3>Extensible</h3>
+          <p class="muted">Later we can add a real form, a blog, or a Python backend.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="section">
+    <div class="container card">
+      <h2>Ready to say hello?</h2>
+      <p class="muted">Drop a quick message—I’d love to hear from you.</p>
+      <p><a class="btn btn-primary" href="contact.html">Go to contact form</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container wrap">
+    <small>© 2025 — Reza’s Personal Site</small>
+    <small>Built with ♥ HTML & CSS</small>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  btn?.addEventListener('click', ()=> links.classList.toggle('show'));
+</script>
+</body>
+</html>

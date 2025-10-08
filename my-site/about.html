@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | My Personal Site</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html"><span class="logo"></span><b>MySite</b></a>
+    <nav>
+      <button class="menu-btn" id="menuBtn">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <section class="card">
+    <h1>About me</h1>
+    <p class="muted">I’m Reza. I’m learning web design step by step and enjoy building fast, simple websites.</p>
+    <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:22px">
+      <div>
+        <p>My current focus is on clean HTML/CSS and adding interactivity with a bit of JavaScript. Later I’ll add a Python backend if needed.</p>
+        <p>Find me on <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> or <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <img src="images/profile.jpg" alt="Profile photo" style="max-width:100%;border-radius:12px">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container wrap">
+    <small>© 2025 — Reza’s Personal Site</small>
+    <small>Contact: via form</small>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  btn?.addEventListener('click', ()=> links.classList.toggle('show'));
+</script>
+</body>
+</html>
